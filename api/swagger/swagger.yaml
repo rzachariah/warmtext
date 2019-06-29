@@ -1,0 +1,65 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: warmtext API
+# basePath prefixes all resource paths 
+basePath: /api/v1
+# 
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /messages:
+    x-swagger-router-controller: messages
+    post:
+      tags : [ Tasks ]
+      description: Send a message
+      operationId: sendMessage
+      parameters:
+        - name: request
+          in: body
+          description: Message specification
+          required: true
+          schema:
+            $ref: "#/definitions/MessageRequest"
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/MessageResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /health:
+    x-swagger-router-controller: health
+    get:
+      tags : [ Health ]
+      description: Check health
+      operationId: checkHealth
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/HealthResponse"
+definitions:
+  MessageRequest:
+    properties:
+      seed:
+        type: string
+        example: Monday
+        minLength: 1
+  MessageResponse:
+    properties:
+      status:
+        type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  HealthResponse:
+    type: string

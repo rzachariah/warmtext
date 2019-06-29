@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "1.0.8",
+  "private": true,
+  "description": "Warm Text API",
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "main": "app.js",
+  "dependencies": {
+    "aws-sdk": "^2.480.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "swagger-express-mw": "^0.7.0",
+    "swagger-tools": "^0.10.4",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "debug": "nodemon server.js",
+    "test": "swagger project test"
+  }
+}
