@@ -47,10 +47,10 @@ paths:
 definitions:
   MessageRequest:
     properties:
-      seed:
+      targetNumber:
         type: string
-        example: Monday
-        minLength: 1
+        example: 617-555-1212
+        pattern: '^[1-9]\d{2}-\d{3}-\d{4}$'
   MessageResponse:
     properties:
       status:
