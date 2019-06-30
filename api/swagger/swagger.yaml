@@ -2,6 +2,7 @@ swagger: "2.0"
 info:
   version: "0.0.1"
   title: warmtext API
+  description: Send warmth in the form of text
 # basePath prefixes all resource paths 
 basePath: /api/v1
 # 
