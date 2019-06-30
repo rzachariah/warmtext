@@ -8,9 +8,12 @@ async function sendMessage(req, res) {
   const request = req.swagger.params.request.value;
   console.log('Got request', request);
 
+  const quote = Quote.getRandomQuote();
+  console.log('Sending', quote);
+
   client.messages
   .create({
-     body: Quote.getRandomQuote(),
+     body: quote,
      from: config.sendingNumber,
      to: request.targetNumber
    })
