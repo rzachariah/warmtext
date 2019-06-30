@@ -14,7 +14,7 @@ paths:
   /messages:
     x-swagger-router-controller: messages
     post:
-      tags : [ Tasks ]
+      tags : [ Messaging ]
       description: Send a message
       operationId: sendMessage
       parameters:
